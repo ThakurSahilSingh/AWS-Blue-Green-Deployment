@@ -14,8 +14,7 @@ phases:
   post_build:
     commands:
       - echo Zipping app for CodeDeploy
-      - zip -r myapp.zip . -x "*.git*"  # include everything except .git folder
-
+      - zip -r myapp.zip . -x "*.git*" -x "node_modules/*"
 artifacts:
   files:
     - myapp.zip
