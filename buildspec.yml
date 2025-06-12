@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Zipping app for CodeDeploy
-      - zip -r myapp.zip . appspec.yaml scripts/
+      - zip -r myapp.zip . -x "*.git*"  # include everything except .git folder
 
 artifacts:
   files:
